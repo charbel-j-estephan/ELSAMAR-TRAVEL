@@ -22,17 +22,9 @@ This Django project is designed to create a dynamic and user-friendly website fo
 ## Setup Instructions
 1. Clone the repository:
    ```
-   git clone https://github.com/charbel-j-estephan/ENG202.git
+   git clone https://github.com/charbel-j-estephan/ELSAMAR-TRAVEL.git
    ```
-2. Navigate to the project directory:
-   ```
-   cd django-website
-   ```
-3. Create a virtual environment (optional but recommended):
-   ```
-   python -m venv venv
-   ```
-4. Activate the virtual environment:
+2. Activate the virtual environment:
    - Windows:
      ```
      venv\Scripts\activate
@@ -41,19 +33,11 @@ This Django project is designed to create a dynamic and user-friendly website fo
      ```
      source venv/bin/activate
      ```
-5. Install required Python packages:
-   ```
-   pip install -r requirements.txt
-   ```
-6. Apply database migrations:
+3. Apply database migrations:
    ```
    python manage.py migrate
    ```
-7. Create a superuser for accessing the admin interface:
-   ```
-   python manage.py createsuperuser
-   ```
-8. Start the development server:
+4. Start the development server:
    ```
    python manage.py runserver
    ```

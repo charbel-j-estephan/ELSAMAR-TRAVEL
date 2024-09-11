@@ -1,0 +1,505 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>EL SAMAR TRAVEL</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/fontAwesome.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/hero-slider.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'css/owl-carousel.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/vanilla.css' %}" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{% static 'img/favicon.png' %}"
+    />
+
+    <script src="{% static 'js/vendor/modernizr-2.8.3-respond-1.4.2.min.js' %}"></script>
+  </head>
+  <body>
+    <style>
+      @media (max-width: 768px) {
+        #logo {
+          max-width: 6.25rem; /* Adjusted maximum width for smaller screens */
+          width: 4.063rem; /* Adjusted width for smaller screens */
+          height: auto; /* Adjusted height for smaller screens */
+          top: 5px; /* Adjusted distance from top for smaller screens */
+          left: 5px; /* Adjusted distance from left for smaller screens */
+        }
+      }
+    </style>
+    <div class="fixed-side-navbar">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link" href="#home"><span>Intro</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#services"><span>Services</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#portfolio"><span>Portfolio</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#our-story"><span>FAQs</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact-us"><span>Contact Us</span></a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="parallax-content baner-content" id="home">
+      <div class="container">
+        <img
+          src="{% static 'img/Shortversion-logo.png' %}"
+          alt="Logo"
+          id="logo"
+          style="width: 100px; position: absolute; top: 25px; left: 10px"
+        />
+        <div class="first-content" style="margin-top: -6.25rem">
+          <h1>EL SAMAR TRAVEL</h1>
+          <span><em>Today</em> you travel with us</span>
+          <div class="primary-button">
+            <a href="#services">Discover More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-content" id="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="left-text">
+              <h4>About ELSAMAR Travel</h4>
+              <div class="line-dec"></div>
+              <p>
+                At <b>ELSAMAR Travel</b>, we believe that behind every memorable
+                journey lies a personal touch.
+              </p>
+              <p>
+                We are not just <b>another</b> travel agency; we are your
+                partners in crafting unforgettable experiences.
+              </p>
+              <p>
+                <b>Our mission is simple:</b> to complement your travel desires
+                with tailored expertise, ensuring that every adventure is as
+                unique as you are.
+              </p>
+              <ul>
+                <li>- We plan to become globally recognized.</li>
+                <li>- We aim to have unparalleled customer security.</li>
+                <li>- We intend to complement your travel desires.</li>
+              </ul>
+              <div class="primary-button">
+                <a href="#portfolio">Learn More About Us</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="service-item">
+                  <h4>Full Packages</h4>
+                  <div class="line-dec"></div>
+                  <p>
+                    Full packages consist of flights, accommodation,
+                    transportation, and insurance all tailored to your
+                    preferences.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="service-item">
+                  <h4>Visa Applications</h4>
+                  <div class="line-dec"></div>
+                  <p>
+                    We assist you throughout the whole process of completing
+                    visa application forms and scheduling appointments.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="service-item">
+                  <h4>Touring Activities</h4>
+                  <div class="line-dec"></div>
+                  <p>
+                    We offer a variety of touring activities, including
+                    sightseeing, hikes, visits to water parks, and museums. Some
+                    activities include the guidance of a tour guide.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="service-item" , id="service-content">
+                  <h4>And More</h4>
+                  <div class="line-dec"></div>
+                  <p>
+                    Additionally, we assist in arranging various services,
+                    including cruise trips, civil weddings, concert tickets,
+                    venue bookings, and European train reservations.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="parallax-content projects-content"
+      id="portfolio"
+      style="background-position: center calc(50% + 624px); padding-top: 5rem"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div id="owl-testimonials" class="owl-carousel owl-theme">
+              {% for product in products %}
+              <div class="item">
+                <div class="testimonials-item">
+                  <a href="{% url 'products_detail' id=product.id %}">
+                    <img
+                      src="{{ product.image.url }}"
+                      alt="{{ product.title }}"
+                  /></a>
+                  <div class="text-content">
+                    <h4>{{ product.title }}</h4>
+                    <span>${{ product.price }}</span>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tabs-content" id="our-story">
+      <div class="container" style="padding-bottom: 40px">
+        <h1
+          style="
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #fff;
+            font-size: 42px;
+            font-weight: 700;
+            padding: 10px 15px;
+          "
+        >
+          frequently asked questions
+        </h1>
+        <div class="row">
+          <div class="col-md-8 mx-auto">
+            <div class="wrapper">
+              <section id="first-tab-group" class="tabgroup">
+                <div id="tab1">
+                  <img src="{% static 'img/1st-tab.jpg' %}" alt="" />
+                  <p>
+                    <b>Can you help with visa applications?</b> Yes, assisting
+                    with visa applications is among the services we offer. Our
+                    expertise includes aiding clients in completing visa forms
+                    and scheduling appointments.
+                  </p>
+                </div>
+                <div id="tab2">
+                  <img src="{% static 'img/2nd-tab.jpg' %}" alt="" />
+                  <p>
+                    <b>What are your cancelation and refund policies?</b> Our
+                    cancellation and refund policies are closely aligned with
+                    those of airlines and hotels. While we strive to secure
+                    refundable options, the specific policy depends on the
+                    choices made by the customer in terms of pricing and
+                    convenience. As a result, each case is handled uniquely.
+                  </p>
+                </div>
+                <div id="tab3">
+                  <img src="{% static 'img/3rd-tab.jpg' %}" alt="" />
+                  <p>
+                    <b>Do you offer travel insurance? </b>Yes we offer travel
+                    insurance. Your travel insurance will be set up for you in
+                    advance and you will be provided with the needed documents.
+                  </p>
+                </div>
+                <div id="tab4">
+                  <img src="{% static 'img/4th-tab.jpg' %}" alt="" />
+                  <p>
+                    <b>How can I contact you for assistance during my trip? </b
+                    >When you need to contact someone during your trip, please
+                    reach out to the number provided to you or the designated
+                    employee who assisted you during the planning of your trip.
+                  </p>
+                </div>
+              </section>
+              <ul class="tabs clearfix" data-tabgroup="first-tab-group">
+                <li><a href="#tab1" class="active">Visa Applications </a></li>
+                <li><a href="#tab2">Cancellation </a></li>
+                <li><a href="#tab3">Insurance </a></li>
+                <li><a href="#tab4">On Trip Assistance</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="parallax-content contact-content" id="contact-us">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="contact-form">
+              <form id="contact" method="post" action="{% url 'contact' %}">
+                {% csrf_token %}
+                <div class="row">
+                  <div class="col-md-12">
+                    <fieldset>
+                      <input
+                        name="name"
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        placeholder="Your name..."
+                        required=""
+                      />
+                    </fieldset>
+                  </div>
+                  <div class="col-md-12">
+                    <fieldset>
+                      <input
+                        name="email"
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        placeholder="Your email..."
+                        required=""
+                      />
+                    </fieldset>
+                  </div>
+                  <div class="col-md-12">
+                    <fieldset>
+                      <textarea
+                        name="message"
+                        rows="6"
+                        class="form-control"
+                        id="message"
+                        placeholder="Your message..."
+                        required=""
+                      ></textarea>
+                    </fieldset>
+                  </div>
+                  <div class="col-md-12">
+                    <fieldset>
+                      <button type="submit" id="form-submit" class="btn">
+                        Send Message
+                      </button>
+                    </fieldset>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="map" style="padding-bottom: 0.031rem">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14454.785961285086!2d55.1514304!3d25.0782742!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6dc8c929b361%3A0x73c6fe9951a58c3!2sSAMAR%20CORPORATE%20TRAVEL%20%26%20HOLIDAYS!5e0!3m2!1sen!2slb!4v1712084678948!5m2!1sen!2slb"
+                width="100%"
+                height="390"
+                frameborder="0"
+                style="border: 0"
+                allowfullscreen
+              ></iframe>
+              <p style="color: white; text-align: center; margin-bottom: 8px">
+                Floor 33, Unit 15 Prime Tower Business Bay, Dubai-UAE
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <style>
+      /* Custom CSS for the squared modal */
+      @media (min-width: 768px) {
+        /* Desktop */
+        .modal-lg {
+          max-width: 25% !important;
+          width: 25% !important;
+        }
+      }
+
+      @media (max-width: 767px) {
+        /* Mobile */
+        .modal-lg {
+          max-width: 75% !important;
+          width: 75% !important;
+          margin: 0 auto;
+        }
+      }
+
+      /* Ensure the modal is squared */
+      .modal-lg {
+        max-width: 100% !important;
+      }
+      .btn-secondary {
+        margin: 0 auto;
+      }
+    </style>
+
+    <div
+      class="modal fade"
+      id="exampleModalCenter"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <p id="modal-message" class="text-center">
+              Your custom success message here.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="primary-button">
+              <a href="#home">Back To Top</a>
+            </div>
+            <ul>
+              <li>
+                <a href="https://www.facebook.com/elsamartravel/"
+                  ><i class="fa fa-facebook"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/elsamartravel.dxb/"
+                  ><i class="fa fa-instagram"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/samar-harb-98743b281?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                  ><i class="fa fa-linkedin"></i
+                ></a>
+              </li>
+              <li>
+                <a href="mailto:samar.ae@elsamartravel.com"
+                  ><i class="fa fa-at"></i
+                ></a>
+              </li>
+              <li>
+                <a href="tel:+971 56 7615414"><i class="fa fa-whatsapp"></i></a>
+              </li>
+            </ul>
+            <p>
+              Copyright &copy; 2024 EL SAMAR TRAVEL - Design:
+              <a
+                rel="develloper"
+                href="https://www.instagram.com/charbel_stephan/?igsh=MTdtaGxubXZnY3B5cw%3D%3D"
+                ><em>Stephan</em></a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+      window.jQuery ||
+        document.write(
+          '<script src="js/vendor/jquery-1.11.2.min.js"><\/script>'
+        );
+    </script>
+    <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script>
+      function openCity(cityName) {
+        var i;
+        var x = document.getElementsByClassName("city");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        document.getElementById(cityName).style.display = "block";
+      }
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        $(".fixed-side-navbar a, .primary-button a").on(
+          "click",
+          function (event) {
+            if (this.hash !== "") {
+              event.preventDefault();
+              var hash = this.hash;
+              $("html, body").animate(
+                {
+                  scrollTop: $(hash).offset().top,
+                },
+                800,
+                function () {
+                  window.location.hash = hash;
+                }
+              );
+            }
+          }
+        );
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $("#contact").on("submit", function (e) {
+          e.preventDefault(); // Prevent the form from submitting normally
+
+          $.ajax({
+            type: "POST",
+            url: $(this).attr("action"),
+            data: $(this).serialize(),
+            success: function (response) {
+              if (response.success) {
+                $("#exampleModalCenter").modal("show"); // Show the modal on success
+                $("#modal-message").text(response.message); // Set modal message
+
+                // Reset the form after successful submission
+                $("#contact")[0].reset();
+              } else {
+                // Handle error response if needed
+              }
+            },
+            error: function (xhr, status, error) {
+              // Handle error
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
